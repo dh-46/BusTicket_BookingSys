@@ -1,0 +1,88 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+  /*padding-top: 54px;*/
+}
+
+@media (min-width: 992px) {
+  body {
+    /*padding-top: 56px;*/
+  }
+}
+
+/*輪播物件的範圍控制*/
+.carousel-item {
+  height: 75vh;  /*vh 視窗可視範圍的65%*/
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+/*輪播畫面頁數指示器*/
+.carousel-indicators li {
+  height:8px;
+  width:8px;
+  border-radius:50%;
+  margin-right:20px;
+}
+
+/*輪播圖片改淡入淡出 (https://www.minwt.com/webdesign-dev/html/16175.html) */ 
+
+.carousel-fade .carousel-inner .item {
+transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,  
+.carousel-fade .carousel-inner .active.left,  
+.carousel-fade .carousel-inner .active.right {
+   opacity: 0;
+}
+.carousel-fade .carousel-inner .active,  
+.carousel-fade .carousel-inner .next.left,  
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .next,  
+.carousel-fade .carousel-inner .prev,  
+.carousel-fade .carousel-inner .active.left,  
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+.sectionblock {
+  background-color:grey;
+  height:23vh;
+  margin-left:0;
+  padding-right:5px;
+}
+
+#section1 {
+  margin-top:4px;
+  padding:0 5px 0 0;
+}
+
+#section1-3 {
+  margin-top:4px;
+  background-color: yellow;
+  padding:0;
+}
+
+#section2 {
+  height:75vh;
+  /*background-image: url('../images/zenpad.png');*/
+  margin-top:4px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+    <title>Test</title>
+    <style type="text/css">
+        #form1 {
+            border: 1px solid black;
+        }
+        div {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form class="container" method="post" action="" id="form1">
+        <div class="row">
+            <div class="form-group">
+                <label for="oneway">單程票</label>
+                <input type="radio" name="ticketType" id="oneway" value="oneway" />
+                <label for="return">來回票</label>
+                <input type="radio" name="ticketType" id="return" value="return" />
+            </div>
+        </div>
+        
+        <div class="row" style="width:100%">
+            <div class="form-group col-sm-6 text-left">
+                <label for="goDate" class="control-label">去程日期</label>
+                <select class="form-control" id="goDate" name="goDate">
+                                <option>2018/11/05</option>
+                                <option>2018/11/06</option>
+                                <option>2018/11/07</option>
+                                <option>2018/11/08</option>
+                            </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="goTime" class="control-label">搭乘時段</label>
+                <select class="form-control" id="goTime" name="goTime">
+                        <option>00:00~04:00</option>
+                        <option>04:00~08:00</option>
+                        <option>08:00~12:00</option>
+                        <option>12:00~16:00</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="width:100%">
+            <div class="form-group col-sm-6 text-left">
+                <label for="departSite" class="control-label">上車站</label>
+                <select class="form-control" id="departSite" name="departSite">
+                                <option>台北轉運站</option>
+                                <option>重陽站</option>
+                                <option>朝馬站</option>
+                                <option>台中車站</option>
+                            </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="arriveSite" class="control-label">下車站</label>
+                <select class="form-control" id="arriveSite" name="arriveSite">
+                        <option>台北轉運站</option>
+                        <option>重陽站</option>
+                        <option>朝馬站</option>
+                        <option>台中車站</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="width:100%">
+            <div class="form-group col-sm-6 text-left">
+                <label for="goDate" class="control-label">回程日期</label>
+                <select class="form-control" id="goDate" name="goDate">
+                                <option>2018/11/05</option>
+                                <option>2018/11/06</option>
+                                <option>2018/11/07</option>
+                                <option>2018/11/08</option>
+                            </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="goTime" class="control-label">搭乘時段</label>
+                <select class="form-control" id="goTime" name="goTime">
+                        <option>00:00~04:00</option>
+                        <option>04:00~08:00</option>
+                        <option>08:00~12:00</option>
+                        <option>12:00~16:00</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="width:100%">
+            <div class="form-group">
+                <input type="submit" value="送出查詢" class="btn btn-success form-control"/>
+            </div>
+        </div>
+    </form>
+
+
+    <!--JS for general usage-->
+
+    <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+
+
+
+    <!--JS for DateTimePickerPlugin-->
+    <script type="text/javascript">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+    <!--<link rel="stylesheet" href="css/datepicker/datepicker.css" type="text/css" />-->
+    <!--<link rel="stylesheet" href="css/switch/bootstrap-switch.css" type="text/css" />-->
+    
+    <title>Query</title>
+    <style type="text/css">
+        
+        /* 導覽列自訂 */
+        .navbar {
+            background-color: #003580;
+            border: 0px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .navbar a {
+            color: #f2f6fa !important;
+        }
+        
+        /* Override 導覽列RWD icon */
+        .navbar-default .navbar-toggle {
+            border-color: #f2f6fa;
+        }
+        
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #f2f6fa;
+        }
+        
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: #009fe3;
+        }
+        
+        .navbar-default .navbar-nav>li>a:hover,
+        .navbar-default .navbar-nav>li>a:focus {
+            color: #f2f6fa;
+            background-color: #009fe3;
+        }
+        
+        
+        /* 背景自訂 */
+        html, body {
+            background-color: #feba02;
+            font-family:'微軟正黑體';
+            
+            /* Margin bottom by footer height */
+            /*margin-bottom: 60px;*/
+            
+            height:100%;
+            /*position:relative;*/
+            /*display: block;*/
+        }
+        
+        
+        .container-1 {
+            /*避免因為navbarfixed被遮蔽*/
+            margin-top: 100px;
+            background-color:#f2f6fa;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: 1px solid #f2f6fa;
+            border-radius: 10px;
+            margin-bottom:100px;
+        }
+        
+        .container {
+          width: auto;
+          /*max-width: 680px;*/
+          max-width: 1000px;
+          padding: 0 15px;
+        }
+        
+        /* 訂票流程進度圖 */
+        .progressbar {
+            margin-top:20px;
+        }
+        
+        .progressbar-item {
+            background-color: #feba02;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: 1px solid #f2f6fa;
+            border-radius: 8px;
+            padding:10px;
+            color:white;
+            font-style:bold;
+        }
+        
+        @media screen and (max-width: 410px) {
+                .progressbar-item {
+                    font-size:12px;
+            }
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        /*footer CSS*/
+        .mainContent {
+            padding:10px;
+            padding-bottom:200px;   /* Height of the footer element */
+        }
+        
+        .footer {
+            background-color:#003580;
+            width:100%;
+            height:200px;
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        
+        .wrapper {
+            min-height:100%;
+            position:relative;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <!--NavBar-->
+    <div class="wrapper">
+        <nav class="navbar navbar-default  navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" href="index.html">搭客運吧</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-li-a" href="query.html">網路訂位</a></li>
+                    <li><a href="instruction.html">乘車指南</a></li>
+                    <li><a href="customService.html">乘客服務</a></li>
+                    <li><a href="timetable.html">時刻表</a></li>
+                    <li><a href="reservedQuery.html">訂位查詢</a></li>
+                </ul>
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--    <li class="dropdown">-->
+                <!--        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">全站導覽 <span class="caret"></span></a>-->
+                <!--        <ul class="dropdown-menu">-->
+                <!--            <li><a href="#">Action</a></li>-->
+                <!--            <li><a href="#">Another action</a></li>-->
+                <!--            <li><a href="#">Something else here</a></li>-->
+                <!--            <li role="separator" class="divider"></li>-->
+                <!--            <li class="dropdown-header">Nav header</li>-->
+                <!--            <li><a href="#">Separated link</a></li>-->
+                <!--            <li><a href="#">One more separated link</a></li>-->
+                <!--        </ul>-->
+                <!--    </li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+    </nav>
+        <div class="mainContent">
+        <!-- 最外圍container-->
+        <div class="container container-1">
+            <div class="container" id="progressbar">
+                <div class="row text-center progressbar">
+                    <ul class="list-inline list-group">
+                        <li class="progressbar-item">選擇日期站點</li>
+                        <li class="progressbar-item">選擇班次</li>
+                        <li class="progressbar-item">購票須知</li>
+                        <li class="progressbar-item">選擇座位</li>
+                        <li class="progressbar-item">訂票完成</li>
+                    </ul>
+                </div>
+            </div>
+            <form class="container" method="post" action="" id="form1">
+        <div class="row col-sm-12">
+            <div class="form-group col-sm-12">
+                <label for="oneway">單程票</label>
+                <input type="radio" name="ticketType" id="oneway" value="oneway" checked="true"/>
+                <label for="return">來回票</label>
+                <input type="radio" name="ticketType" id="return" value="return" />
+            </div>
+        </div>
+        
+        <div class="row col-sm-12">
+            <div class="form-group col-sm-6 text-left">
+                <label for="depDate" class="control-label">去程日期</label>
+                <select class="form-control" id="depDate" name="depDate">
+                        <option value="2018/11/05">2018/11/05</option>
+                        <option value="2018/11/06">2018/11/06</option>
+                        <option value="2018/11/07">2018/11/07</option>
+                        <option value="2018/11/08">2018/11/08</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="depTime" class="control-label">搭乘時段</label>
+                <select class="form-control" id="depTime" name="depTime">
+                        <option value="t1">00:00~02:59</option>
+                        <option value="t2">03:00~05:59</option>
+                        <option value="t3">06:00~08:59</option>
+                        <option value="t4">09:00~11:59</option>
+                        <option value="t5">12:00~14:59</option>
+                        <option value="t6">15:00~17:59</option>
+                        <option value="t7">18:00~20:59</option>
+                        <option value="t8">21:00~23:59</option>
+                </select>
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="form-group col-sm-6 text-left">
+                <label for="departSite" class="control-label">上車站</label>
+                <select class="form-control" id="departSite" name="departSite">
+                        <option>請選擇上車站</option>
+                        <optgroup label="北部地區">
+                            <option value="0001">台北轉運站</option>
+                            <option value="0008">重陽站</option>
+                        </optgroup>
+                        <optgroup label="中部地區">
+                                <option value="0014">台中車站</option>
+                                <option value="0015">朝馬站</option>
+                        </optgroup>
+                </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="arriveSite" class="control-label">下車站</label>
+                <select class="form-control" id="arriveSite" name="arriveSite">
+                        <option>請選擇下車站</option>
+                        <optgroup label="北部地區">
+                            <option value="0001">台北轉運站</option>
+                            <option value="0008">重陽站</option>
+                        </optgroup>
+                        <optgroup label="中部地區">
+                            <option value="0014">台中車站</option>
+                            <option value="0015">朝馬站</option>
+                        </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="row col-sm-12" id="returnSection" style="display:none;">
+            <div class="form-group col-sm-6 text-left">
+                <label for="goDate" class="control-label">回程日期</label>
+                <select class="form-control" id="goDate" name="goDate">
+                        <option value="2018/11/05">2018/11/05</option>
+                        <option value="2018/11/06">2018/11/06</option>
+                        <option value="2018/11/07">2018/11/07</option>
+                        <option value="2018/11/08">2018/11/08</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-6 text-left">
+                <label for="goTime" class="control-label">搭乘時段</label>
+                <select class="form-control" id="goTime" name="goTime">
+                        <option value="t1">00:00~02:59</option>
+                        <option value="t2">03:00~05:59</option>
+                        <option value="t3">06:00~08:59</option>
+                        <option value="t4">09:00~11:59</option>
+                        <option value="t5">12:00~14:59</option>
+                        <option value="t6">15:00~17:59</option>
+                        <option value="t7">18:00~20:59</option>
+                        <option value="t8">21:00~23:59</option>
+                </select>
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="form-group col-sm-12">
+                <input type="submit" value="送出查詢" class="btn btn-primary form-control"/>
+            </div>
+        </div>
+    </form>
+    </div>
+    </div> 
+        <footer class="footer">
+      <div class="container">
+         
+      </div>
+    </footer>
+    </div>
+    
+    
+    <!--JS for general usage-->
+    <!--<script type="text/javascript" src="js/jquery3.3.1.js"></script>-->
+    <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="js/switch/bootstrap-switch.js"></script>-->
+    
+    
+    <!--JS for DateTimePickerPlugin-->
+    <!--<script type="text/javascript" src="js/datepicker/moment-with-locales.js"></script>-->
+    <!--<script type="text/javascript" src="js/datepicker/datepicker-bootstrap.js"></script>-->
+    <script type="text/javascript">
+            // $("[name='ticketType']").bootstrapSwitch();
+            $("[name='ticketType']").on("click", function(){
+                if ($(this).attr("value") == "oneway") {
+                    $('#returnSection').hide();
+                } else {
+                    $('#returnSection').show();
+                    }
+                });
+    </script>
+</body>
+
+</html>
