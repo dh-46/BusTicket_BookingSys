@@ -113,7 +113,7 @@
                                     <h3 class="panel-title">去程班次列表</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <div class="list-group">
+                                    <div class="list-group oneWayS">
                                         <input type="text" name="oneWaySelect" id="oneWaySelect" hidden/>
                                         <a href="javascript:radioSelect(0)" id="oneWayS1" class="list-group-item list-group-item-warning materialShadow-1">
                                                                2018/11/20 08:00
@@ -138,20 +138,22 @@
                                         <h3 class="panel-title">回程班次列表</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <div class="list-group">
+                                        <div class="list-group returnS">
                                             <input type="text" name="returnSelect" id="returnSelect" hidden/>
-                                            <a href="javascript:radioSelect(3)" id="returnS1" class="list-group-item list-group-item-warning materialShadow-1">
-                                                               2018/11/22 12:00
-                                                               <span class="badge">剩餘座位 10</span>
-                                                               </a>
-                                            <a href="javascript:radioSelect(4)" id="returnS2" class="list-group-item list-group-item-warning materialShadow-1">
+                                            <a href="javascript:radioSelect(3)" 
+                                                id="returnS1" 
+                                                class="list-group-item list-group-item-warning materialShadow-1">2018/11/22 12:00
+                                                                <span class="badge">剩餘座位 10</span></a>
+                                            <a href="javascript:radioSelect(4)" 
+                                                id="returnS2" 
+                                                class="list-group-item list-group-item-warning materialShadow-1">
                                                                2018/11/22 13:00
-                                                               <span class="badge">剩餘座位 10</span>
-                                                               </a>
-                                            <a href="javascript:radioSelect(5)" id="returnS3" class="list-group-item list-group-item-warning materialShadow-1">
+                                                               <span class="badge">剩餘座位 10</span></a>
+                                            <a href="javascript:radioSelect(5)" 
+                                                id="returnS3" 
+                                                class="list-group-item list-group-item-warning materialShadow-1">
                                                                2018/11/22 14:00
-                                                               <span class="badge">剩餘座位 3</span>
-                                                               </a>
+                                                               <span class="badge">剩餘座位 3</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -227,27 +229,48 @@
             function radioSelect(index) {
                 switch (index) {
                     case 0:
+                        // 把選擇的選項index寫到隱藏欄位中
+                        // var answer = $('#oneWayS1').text();
                         $('#oneWaySelect').attr('value',index);
+                        // Reset三個選項的底色
+                        $('.oneWayS a').css('background-color', '#fcf8e3');
+                        // 變更被選上的選項底色
+                        $('#oneWayS1').css('background-color', '#FCEEA9');
                         console.log($('#oneWaySelect').val());
                         break;
                     case 1:
-                         $('#oneWaySelect').attr('value',index);
+                        // var answer = $('#oneWayS2').text();
+                        $('#oneWaySelect').attr('value', index);
+                        $('.oneWayS a').css('background-color', '#fcf8e3');
+                        $('#oneWayS2').css('background-color', '#FCEEA9');
                         console.log($('#oneWaySelect').val());
                         break;
                     case 2:
-                         $('#oneWaySelect').attr('value',index);
+                        // var answer = $('#oneWayS3').text();
+                        $('#oneWaySelect').attr('value', index);
+                        $('.oneWayS a').css('background-color', '#fcf8e3');
+                        $('#oneWayS3').css('background-color', '#FCEEA9');
                         console.log($('#oneWaySelect').val());
-                        break;  
+                        break;
                     case 3:
-                        $('#returnSelect').attr('value',index);
+                        // var answer = $('#returnS1').text();
+                        $('#returnSelect').attr('value', index);
+                        $('.returnS a').css('background-color', '#fcf8e3');
+                        $('#returnS1').css('background-color', '#FCEEA9');
                         console.log( $('#returnSelect').val());
                         break;
                     case 4:
+                        // var answer = $('#returnS2').text();
                         $('#returnSelect').attr('value',index);
+                        $('.returnS a').css('background-color', '#fcf8e3');
+                        $('#returnS2').css('background-color', '#FCEEA9');
                         console.log( $('#returnSelect').val());
                         break;
                     case 5:
+                        var answer = $('#returnS3').text();
                         $('#returnSelect').attr('value',index);
+                        $('.returnS a').css('background-color', '#fcf8e3');
+                        $('#returnS3').css('background-color', '#FCEEA9');
                         console.log( $('#returnSelect').val());
                         break; 
                 }

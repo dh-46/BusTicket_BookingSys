@@ -90,11 +90,8 @@
 年歌想軍這部是上自。的達年升：經品信如她是上當子然有得度人的，何有的格較助此而顯深四終易成驗素案前關做安來持實林來聲面市臉朋不清團天用話裡之制……的隊全區大電利票國張對媽。家條一學一麼每角發單子英；像行為美的假到流受美馬題著自口麼收接間中，親是法比。告文高生。樹出家，合樂官成發然條後清企是行後球們動、酒致來阿來？自先沒質山的世客公本事手的水子言形上電？開市育馬任；了常男大海有，孩小寫你，位港飛中子雙想馬不好。望直地用東當語自因少了元看話然倒處寶以化傳加生地時建。
 
 早合的們圖們交請情小？
-
 人師務室然斯，沒人河！們效度內紀用市山說！可北數這加營！
-
 難點新出士片投愛價就他傷化的教還，道月興列們收界月。
-
 車導親。</p>
                                     <div class="checkbox text-center">
                                         <label><input type="checkbox" name="agreeTerm" value="true" id="agreeTermCheck"/>我同意上述條款</label>
@@ -116,11 +113,11 @@
                             <div class="input-group input-custom">
                                 <span class="input-group-addon " id="uid-label">身分證字號</span>
                                 <input type="text" class="form-control" placeholder="請輸入您的身分證字號" aria-describedby="uid-label" name="uid" id="uidInput"
-                                data-toggle="popover" title="" data-content="格式錯誤, 請重新輸入" data-placement="bottom">
+                                data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                             </div>
                             <div class="input-group input-custom">
                                 <span class="input-group-addon" id="orderCode-label">訂票代號</span>
-                                <input type="text" class="form-control" placeholder="手機號碼末六碼" aria-describedby="orderCode-label" name="orderCode">
+                                <input type="text" class="form-control" placeholder="六位數字(建議使用手機後六碼)" aria-describedby="orderCode-label" name="orderCode" maxlength="6" id="orderCode">
                             </div>
                             <div class="input-group input-custom">
                                 <span class="input-group-addon" id="verifiedCode-label">驗證碼</span>
@@ -130,13 +127,11 @@
                             <input type="submit" value="下一步選擇座位" class="btn btn-success form-control"/>
                         </div>
                         </div>
-                        
                     </div>
-                
-                    
                 </form>
             </div>
         </div>
+        <div id="snackbar"></div>
         <!--Footer-->
         <footer class="footer">
             <div class="container text-center">
@@ -165,25 +160,41 @@
                 $('.mainContent').fadeIn(1000);
             });
             
+            // Snackbar
+            function showSnackbar(message) {
+                $('#snackbar').addClass('show');
+                $('#snackbar').text(message);
+                setTimeout(function() {
+                    $('#snackbar').prop('class','');
+                }, 3000);
+                // setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+            }
             
-            // 驗證身份證字號
-            $('#uidInput').on("blur", function(){
-                    var input = $('#uidInput').val();
-                     if (input.match('^[A-Z][1-2][0-9]{8}$')) {
-                         if (!checkUid(input)){ 
-                          console.log("Wrong UID"); 
-                        } 
-                     }
-                     else {
-                         // 可考慮是否使用POPOVER
-                         // $('#uidInput').popover(true);
-                         // $('#uidInput').css('color','red');
-                         console.log('Wrong Pattern!');
-                     }
-                });
+            // 動態驗證身份證字號事件
+            $('#uidInput').on("focusout", function(){
+                checkUid();
+                console.log("focusout");
+            });
             
-            // 驗證身份證字號core
-            function checkUid(input){
+            // 驗證是否有勾選同意
+            function checkAgreement(){
+                isAgree = $('#agreeTermCheck').prop('checked')
+                console.log(isAgree);
+                return isAgree;
+            }
+            
+            // 驗證身份證字號方法
+            function checkUid(){
+                var input = $('#uidInput').val();
+                
+                if ( input == ''){
+                    showSnackbar("請輸入您的身分證字號");
+                    return false;
+                } else if (!input.match('^[A-Z][1-2][0-9]{8}$')){
+                    showSnackbar("身分證字號格式錯誤");
+                    return false;    
+                }
+                
                 var letters = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
                 var n12 = letters.indexOf(input.charAt(0))+10;
                 var n1 = n12 / 10;
@@ -202,25 +213,55 @@
                 parseInt(input.charAt(9))*1;
                 
                 if (Math.round(sum) % 10 == 0){
-                    console.log(sum);
                     return true;
                 } else{
-                    console.log(sum);
+                    // console.log('驗證失敗');
+                    // snackbar("身份證字號驗證失敗, 請重新輸入");
                     return false;    
                 }
             }
             
+            // 驗證代碼是否符合規範
+            function checkOrderCode(){
+                var orderCode = $('#orderCode').val();
+                if (orderCode.match('^[0-9]{6}$')) {
+                    return true;
+                }
+                return false;
+            }
+            
             // 檢查表單是否正確
             function checkForm(){
-                if (!$('#agreeTermCheck').prop('checked')){
-                    // 未同意訂票合約
-                    return false;
+                // 檢查是否同意
+                if (checkAgreement()){
+                    // 檢查身分證
+                    if (checkUid()){
+                        // 身分證正確
+                        if (checkOrderCode()){
+                            console.log('表單送後端驗證');
+                            return true;
+                        } else {
+                            showSnackbar("取票代碼不符規定");
+                            console.log("取票代碼不符規定");
+                            return false;
+                        }
+                    } else {
+                        // 身分錯誤
+                        showSnackbar("身份證字號有誤");
+                        console.log('身份證字號有誤');
+                        return false;
+                    }
                 } else {
-                    // 驗證其他區域
-                    
-                    return true;    
+                    // 尚未同意
+                    showSnackbar("請勾選同意書");
+                    console.log('請勾選同意書');
+                    return false;
                 }
+                return false;
             }
+            
+            
+            
     </script>
 </body>
 

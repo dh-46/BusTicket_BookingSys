@@ -1,0 +1,90 @@
+/*
+CheckBox Switch 
+for order1.html #tripTypeSwitch
+
+modified from https://proto.io/freebies/onoff/
+
+last changed: 20181109 09:59
+*/
+
+.onoffswitch {
+            position: relative;
+            width: 100px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .onoffswitch-checkbox {
+            display: none;
+        }
+        
+        .onoffswitch-label {
+            display: block;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #E3E3E3;
+            border-radius: 8px;
+            padding:0px;
+        }
+        
+        .onoffswitch-inner {
+            display: block;
+            width: 200%;
+            margin-left: -100%;
+            transition: margin 0.3s ease-in 0s;
+        }
+        
+        .onoffswitch-inner:before,
+        .onoffswitch-inner:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 30px;
+            padding: 0px;
+            line-height: 30px;
+            font-size: 16px;
+            color: white;
+            font-family: Trebuchet, Arial, sans-serif;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        
+        .onoffswitch-inner:before {
+            content: "來回票";
+            font-family:'微軟正黑體';
+            padding-left: 10px;
+            background-color: #009FE3;
+            color: #F2F6FA;
+        }
+        
+        .onoffswitch-inner:after {
+            content: "單程票";
+            font-family:'微軟正黑體';
+            padding-right: 10px;
+            background-color: #FEBA02;
+            color: #F2F6FA;
+            text-align: right;
+        }
+        
+        .onoffswitch-switch {
+            display: block;
+            width: 30px;
+            margin: 0px;
+            background: #666;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 70px;
+            border: 2px solid #E3E3E3;
+            border-radius: 8px;
+            transition: all 0.3s ease-in 0s;
+        }
+        
+        .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+            margin-left: 0px;
+        }
+        
+        .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+            right: 0px;
+        }

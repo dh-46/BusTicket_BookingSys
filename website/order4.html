@@ -5,49 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
-    <!--<link rel="stylesheet" href="css/datepicker/datepicker.css" type="text/css" />-->
-    <!--<link rel="stylesheet" href="css/switch/bootstrap-switch.css" type="text/css" />-->
     <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
     <title>選擇座位</title>
     <style type="text/css">
         /* CSS Testing */
-        
-        
-        
-    </style>
+
+        .ticketCard {
+            /*border: 2px solid #    */
+        }
+
+        .seats {
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat, no-repeat;
+            background-image: url('img/seat.svg');
+        }
+
+        </style>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
         <nav class="navbar navbar-default  navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-                <a class="navbar-brand logo" href="index.html">
+                    <a class="navbar-brand logo" href="index.html">
                     <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
                 </a>
-                <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
-                    搭客運吧
+                    <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
+                    搭客運吧網路訂票系統
                 </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
+                        <li><a href="instruction.html">乘車指南</a></li>
+                        <li><a href="customService.html">乘客服務</a></li>
+                        <li><a href="timetable.html">時刻表</a></li>
+                        <li><a href="reservedQuery.html">訂位查詢</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-li-a" href="query.html">網路訂位</a></li>
-                    <li><a href="instruction.html">乘車指南</a></li>
-                    <li><a href="customService.html">乘客服務</a></li>
-                    <li><a href="timetable.html">時刻表</a></li>
-                    <li><a href="reservedQuery.html">訂位查詢</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-        
+        </nav>
+
         <!-- Main Content -->
         <div class="mainContent">
             <!--Section1-->
@@ -68,62 +75,163 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">
+                            <div class="panel panel-success panel-custom materialShadow-1">
+                                <div class="panel-heading panel-heading-custom">
                                     <h3 class="panel-title text-center">選擇座位</h3>
                                 </div>
                                 <div class="panel-body">
-                                    
+                                    <div class="panel panel-warning">
+                                        <table class="table text-center">
+                                            <tr>
+                                                <td rowspan="4" style="background-color:#ff0;"></td>
+                                                <!--5, 8, 11, 14, 17, 20, 23, 26, 30-->
+                                                <!--                              29-->
+                                                <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
+                                                <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(5)">5</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(8)">8</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(11)">11</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(14)">14</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(17)">17</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(20)">20</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(23)">23</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(26)">26</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(30)">30</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--5, 8, 11, 14, 17, 20, 23, 26, 30-->
+                                                <!--                              29-->
+                                                <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
+                                                <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(29)">29</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--5, 8, 11, 14, 17, 20, 23, 26, 30-->
+                                                <!--                              29-->
+                                                <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
+                                                <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(4)">4</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(7)">7</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(10)">10</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(13)">13</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(16)">16</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(19)">19</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(22)">22</button>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(28)">28</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--5, 8, 11, 14, 17, 20, 23, 26, 30-->
+                                                <!--                              29-->
+                                                <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
+                                                <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(3)">3</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(6)">9</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(12)">12</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(15)">15</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(18)">18</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(21)">21</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(24)">24</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(26)">26</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(27)">27</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 輸入訂票人資訊 -->
+
+                <!-- 訂票資訊確認 -->
                 <form class="container" method="post" action="" id="userInfo">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center">訂票人資訊</h3>
+                    <div class="panel panel-primary panel-custom materialShadow-1">
+                        <div class="panel-heading panel-heading-custom">
+                            <h3 class="panel-title text-center">訂票資訊確認</h3>
                         </div>
                         <div class="panel-body text-center panel-custom">
-                            
+                            <div class="container ticketCard">
+                                <div class="col-sm-12">
+                                    <h3>乘車日期: 2018/11/28</h3>
+                                    <h3>乘車時間: 08:00</h3>
+                                    <h3>上車站: 台中車站</h3>
+                                    <h3>下車站: 台北轉運站</h3>
+                                    <h3>票種: 單程</h3>
+                                    <h3>票別: 全票 x 1</h3>
+                                    <h3>座位: ___</h3>
+                                    <h3>金額: 290</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                
-                    
+
+
                 </form>
             </div>
         </div>
         <!--Footer-->
         <footer class="footer">
             <div class="container text-center">
-                <!--<div class="row">-->
-                <!--    <div class="col-lg-4">-->
-                <!--        <ul>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--    <div class="col-lg-4">-->
-                <!--        <ul>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--    <div class="col-lg-4">-->
-                <!--        <ul>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--            <li><a class="footer-links" href="query.html">最新消息</a></li>-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--</div>-->
                 <div class="row">
                     <div class="col-xs-12">
                         <br>
@@ -142,15 +250,17 @@
     <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
     <script type="text/javascript">
-            $('document').ready(function() {
-        $('#logopic').toggle(1000, function(){
-            $('#navtitle').fadeIn(1000);
+        $('document').ready(function() {
+            $('#logopic').toggle(1000, function() {
+                $('#navtitle').fadeIn(1000);
             });
-        $('.mainContent').fadeIn(1000);
-        
-    });
-    
-    
+            $('.mainContent').fadeIn(1000);
+
+        });
+
+        function debug() {
+            alert('debug');
+        }
     </script>
 </body>
 

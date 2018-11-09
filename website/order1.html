@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
+    <link rel="stylesheet" href="css/dh-checkSwitch.css" type="text/css" />
     <title>查詢班次時間</title>
     <style type="text/css">
         /* CSS testing*/
-        
+        label{
+            font-size:16px;    
+        }
     </style>
 </head>
 
@@ -64,25 +67,29 @@
             <form class="container" method="post" action="" id="form1">
             <div class="row col-sm-12">
                 <div class="form-group col-sm-12">
-                    <label for="oneway">單程票</label>
-                    <input type="radio" name="tripType" id="oneway" value="oneway" checked="true"/>
-                    <label for="return">來回票</label>
-                    <input type="radio" name="tripType" id="return" value="return" />
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="tripType" class="onoffswitch-checkbox" id="tripTypeSwitch">
+                        <label class="onoffswitch-label" for="tripTypeSwitch">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                    <!--<label for="oneway">單程票</label>-->
+                    <!--<input type="radio" name="tripType" id="oneway" value="oneway" checked="true"/>-->
+                    <!--<label for="return">來回票</label>-->
+                    <!--<input type="radio" name="tripType" id="return" value="return" />-->
                 </div>
             </div>
             
             <div class="row col-sm-12">
                 <div class="form-group col-sm-6 text-left">
-                    <label for="depDate" class="control-label">去程日期</label>
-                    <select class="form-control" id="depDate" name="depDate">
-                            <option value="2018/11/05">2018/11/05</option>
-                            <option value="2018/11/06">2018/11/06</option>
-                            <option value="2018/11/07">2018/11/07</option>
-                            <option value="2018/11/08">2018/11/08</option>
+                    <label for="depDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  去程日期</label>
+                    <select class="form-control  dateOption" id="depDate" name="depDate">
+                        
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
-                    <label for="depTime" class="control-label">搭乘時段</label>
+                    <label for="depTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
                     <select class="form-control" id="depTime" name="depTime">
                             <option value="t1">00:00~02:59</option>
                             <option value="t2">03:00~05:59</option>
@@ -97,7 +104,7 @@
             </div>
             <div class="row col-sm-12">
                 <div class="form-group col-sm-6 text-left">
-                    <label for="departSite" class="control-label">上車站</label>
+                    <label for="departSite" class="control-label"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  上車站</label>
                     <select class="form-control" id="departSite" name="departSite">
                             <option>請選擇上車站</option>
                             <optgroup label="北部地區">
@@ -111,7 +118,7 @@
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
-                    <label for="arriveSite" class="control-label">下車站</label>
+                    <label for="arriveSite" class="control-label"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  下車站</label>
                     <select class="form-control" id="arriveSite" name="arriveSite">
                             <option>請選擇下車站</option>
                             <optgroup label="北部地區">
@@ -127,17 +134,14 @@
             </div>
             <div class="row col-sm-12" id="returnSection" style="display:none;">
                 <div class="form-group col-sm-6 text-left">
-                    <label for="goDate" class="control-label">回程日期</label>
-                    <select class="form-control" id="goDate" name="goDate">
-                            <option value="2018/11/05">2018/11/05</option>
-                            <option value="2018/11/06">2018/11/06</option>
-                            <option value="2018/11/07">2018/11/07</option>
-                            <option value="2018/11/08">2018/11/08</option>
+                    <label for="arriveDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  回程日期</label>
+                    <select class="form-control dateOption" id="arriveDate" name="arriveDate">
+                            
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
-                    <label for="goTime" class="control-label">搭乘時段</label>
-                    <select class="form-control" id="goTime" name="goTime">
+                    <label for="arrivTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
+                    <select class="form-control" id="arrivTime" name="arriveTime">
                             <option value="t1">00:00~02:59</option>
                             <option value="t2">03:00~05:59</option>
                             <option value="t3">06:00~08:59</option>
@@ -239,8 +243,7 @@
     
     
     <!--JS for DateTimePickerPlugin-->
-    <!--<script type="text/javascript" src="js/datepicker/moment-with-locales.js"></script>-->
-    <!--<script type="text/javascript" src="js/datepicker/datepicker-bootstrap.js"></script>-->
+    <script type="text/javascript" src="js/datepicker/moment-with-locales.js"></script>
     <script type="text/javascript">
     $('document').ready(function() {
         // 頁面載入動畫
@@ -249,12 +252,16 @@
             });
         $('.mainContent').fadeIn(1000);
         
+        
+        // 動態加入去回程日期選項
+        loadDateOptions();
     });
     
     // 切換單程來回
     $("[name='tripType']").on("click", function(){
-        if ($(this).attr("value") == "oneway") {
+        if (!$(this).prop("checked")) {
             // 單程
+            console.log('Hello');
             $('#returnSection').toggle(1000);
             $('#discountSection').fadeIn();
             $('#childSection').fadeIn();
@@ -268,6 +275,19 @@
             $('#discount').prop('value','0');
             }
         });
+        
+        
+    // 產生去回程日期選項
+    // 利用moment.js&jquery
+    function loadDateOptions(){
+        for (i=0;i<20;i++) {
+            var date = moment().locale('zh-tw').add(i, 'days').format('L');
+            var days = moment().locale('zh-tw').add(i, 'days').format('dddd');
+            $('.dateOption').append('<option>'+ date + ' ' + days  +'</option>').text();
+            $('.dateOption option:eq('+ i +')').attr('value', date);
+        }
+    }
+    
     </script>
 </body>
 
