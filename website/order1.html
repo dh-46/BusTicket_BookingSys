@@ -72,7 +72,7 @@
                     </div>
                 </div>
             <!-- 表單區 -->
-            <form class="container" method="post" action="" id="form1">
+            <form class="container" method="post" action="" id="form1" onsubmit="return checkForm1()">
             <div class="row col-sm-12">
                 <div class="form-group col-sm-12">
                     <div class="onoffswitch">
@@ -93,12 +93,13 @@
                 <div class="form-group col-sm-6 text-left">
                     <label for="depDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  去程日期</label>
                     <select class="form-control  dateOption" id="depDate" name="depDate">
-                        
+                        <option value="null">請選擇去程日期</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
                     <label for="depTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
                     <select class="form-control" id="depTime" name="depTime">
+                            <option value="null">請選擇乘車時段</option>
                             <option value="t1">00:00~02:59</option>
                             <option value="t2">03:00~05:59</option>
                             <option value="t3">06:00~08:59</option>
@@ -114,7 +115,7 @@
                 <div class="form-group col-sm-6 text-left">
                     <label for="departSite" class="control-label"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  上車站</label>
                     <select class="form-control" id="departSite" name="departSite">
-                            <option>請選擇上車站</option>
+                            <option value="null">請選擇上車站</option>
                             <optgroup label="北部地區">
                                 <option value="0001">台北轉運站</option>
                                 <option value="0008">重陽站</option>
@@ -144,12 +145,13 @@
                 <div class="form-group col-sm-6 text-left">
                     <label for="arriveDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  回程日期</label>
                     <select class="form-control dateOption" id="arriveDate" name="arriveDate">
-                            
+                        <option value="null">請選擇回程日期</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
                     <label for="arrivTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
                     <select class="form-control" id="arrivTime" name="arriveTime">
+                            <option value="null">請選擇乘車時段</option>
                             <option value="t1">00:00~02:59</option>
                             <option value="t2">03:00~05:59</option>
                             <option value="t3">06:00~08:59</option>
@@ -202,6 +204,7 @@
         </form>
             </div>
         </div>
+        <div id="snackbar"></div>
         <!--Footer-->
         <footer class="footer">
             <div class="container text-center">
@@ -269,7 +272,6 @@
     $("[name='tripType']").on("click", function(){
         if (!$(this).prop("checked")) {
             // 單程
-            console.log('Hello');
             $('#returnSection').toggle(1000);
             $('#discountSection').fadeIn();
             $('#childSection').fadeIn();
@@ -288,13 +290,40 @@
     // 產生去回程日期選項
     // 利用moment.js&jquery
     function loadDateOptions(){
-        for (i=0;i<20;i++) {
+        for (i=0;i<14;i++) {
             var date = moment().locale('zh-tw').add(i, 'days').format('L');
             var days = moment().locale('zh-tw').add(i, 'days').format('dddd');
             $('.dateOption').append('<option>'+ date + ' ' + days  +'</option>').text();
             $('.dateOption option:eq('+ i +')').attr('value', date);
         }
     }
+    
+    // Snackbar
+    function showSnackbar(message) {
+        $('#snackbar').addClass('show');
+        $('#snackbar').text(message);
+        setTimeout(function() {
+        $('#snackbar').prop('class', '');
+        }, 3000);
+    }
+    
+    
+    // 檢查表單
+    function checkForm1(){
+        isOK = false
+        
+        if (!$('#tripTypeSwitch').prop('checked')){
+            // 單程票檢查
+            if ($('#depDate option:selected').val() == "null") {
+                console.log("未填寫去程日期");
+            }
+            
+        } else {
+            
+        }
+        return isOK;
+    }
+    
     
     </script>
 </body>

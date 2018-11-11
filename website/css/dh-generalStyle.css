@@ -95,7 +95,7 @@ li {
     position: relative;
 }
 
-
+/* RWD for small screen */
 @media screen and (max-width: 410px) {
     .progressbar-item {
         font-size: 10px;
@@ -140,18 +140,21 @@ li {
 }
 
 .progressbar-item {
-    background-color: #feba02;
+    background-color: #009fe3;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border: 1px solid #f2f6fa;
+    
     border-radius: 3px;
     padding: 10px;
     width:120px;
     color: white;
-    font-style: bold;
+    font-weight: bold;
+    opacity: 0.5;
 }
 
 .progressbar-selected {
-    background-color: #009fe3;
+    background-color: #34bf49;
+    border: 2px solid #f2f6fa;
+    opacity: 1;
 }
 
 #progress2{
