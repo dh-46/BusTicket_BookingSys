@@ -14,9 +14,16 @@
             /*border: 2px solid #    */
         }
 
-        .seats {
-            
+        .firstColum{
+            padding-right: 1px !important;
+            padding-left: 1px !important;
         }
+        
+        .seatsNote {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
 
         </style>
 </head>
@@ -84,19 +91,21 @@
                                 <div class="panel-heading panel-heading-custom">
                                     <h3 class="panel-title text-center">選擇座位</h3>
                                 </div>
-                                <div class="col-sm-12">車頭方向</div>
+                                
                                 <div class="panel-body">
                                     
                                     <div class="panel panel-warning">
-                                        <table class="table text-center">
+                                        <table class="table table-condensed table-responsive text-center">
                                             <!--3, 6, 09, 12, 15, 18, 21, 23, 27-->
                                             <!--                              26-->
                                             <!--2, 5, 08, 11, 14, 17, 20,   , 25-->
                                             <!--1, 4, 07, 10, 13, 16, 19, 22, 24-->
                                             <tr>
-                                                <td rowspan="4"></td>
+                                                <td class="firstColum">
+                                                    <div class="btn btn-success btn-sm">車門</div>
+                                                </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm seats" onclick="javascript:chooseSeat(3)">03</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(3)">03</button>
                                                 </td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(6)">06</button>
@@ -128,6 +137,9 @@
                                                 <!--                              29-->
                                                 <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
                                                 <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td class="firstColum">
+                                                    <div class="btn btn-success btn-sm seats" style="visibility: hidden;"></div>
+                                                </td>
                                                 <td></td><td></td>
                                                 <td></td><td></td>
                                                 <td></td><td></td>
@@ -137,14 +149,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(2)">2</button>
+                                                <td class="firstColum" rowspan="2" style="padding-top: 17px; background-color: #5cb85c;">
+                                                    <div class="btn btn-success btn-sm seats" style="border: 0px;" disable>
+                                                    駕駛<br>座位
+                                                    </div>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(5)">5</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(2)">02</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(8)">8</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(5)">05</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(8)">08</button>
                                                 </td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(11)">11</button>
@@ -169,14 +186,15 @@
                                                 <!--                              26-->
                                                 <!--2, 5, 08, 11, 14, 17, 20,   , 25-->
                                                 <!--1, 4, 07, 10, 13, 16, 19, 22, 24-->
+                                                
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(1)">1</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(1)">01</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(4)">4</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(4)">04</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(7)">7</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(7)">07</button>
                                                 </td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(10)">10</button>
@@ -214,15 +232,54 @@
                         </div>
                         <div class="panel-body text-center panel-custom">
                             <div class="container ticketCard">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="">
+                                        <table class="table text-center table-responsive">
+                                            <tr class="success">
+                                                <th class="text-center">票種</th>
+                                                <td colspan="3">來回票</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">去程日期</th>
+                                                <td colspan="3">2018/11/28</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">乘車時間</th>
+                                                <td colspan="3">08:00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">上車站</th>
+                                                <td colspan="3">0001-台北轉運站</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">下車站</th>
+                                                <td colspan="3">0008-朝馬站</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">回程日期</th>
+                                                <td colspan="3">2018/11/28</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">乘車時間</th>
+                                                <td colspan="3">08:00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">票券數量</th>
+                                                <td>全票</td>
+                                                <td>全票</td>
+                                                <td>全票</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">總金額</th>
+                                                <td colspan="3">1080</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
                                 <div class="col-sm-12">
-                                    <h3>乘車日期: 2018/11/28</h3>
-                                    <h3>乘車時間: 08:00</h3>
-                                    <h3>上車站: 台中車站</h3>
-                                    <h3>下車站: 台北轉運站</h3>
-                                    <h3>票種: 單程</h3>
-                                    <h3>票別: 全票 x 1</h3>
-                                    <h3>座位: ___</h3>
-                                    <h3>金額: 290</h3>
+                                    <input type="submit" value="確認送出" class="btn btn-danger"></input>
                                 </div>
                             </div>
                         </div>
