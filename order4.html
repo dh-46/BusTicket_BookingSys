@@ -24,7 +24,9 @@
             margin-bottom: 10px;
         }
 
-
+        .custom-table{
+            font-size: 16px;
+        }
         </style>
 </head>
 
@@ -85,6 +87,8 @@
                 </div>
                 <!-- 選擇座位 -->
                 <div class="container">
+
+                    <!-- 去程座位 -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel panel-success panel-custom materialShadow-1">
@@ -93,7 +97,11 @@
                                 </div>
                                 
                                 <div class="panel-body">
-                                    
+                                    <div class="container">
+                                        <div class="col-sm-12 text-center">
+                                            <h5 style="margin-bottom: 20px;">目前座位選擇: <span id="oneWaySeatsShow"></span></h5>
+                                        </div>
+                                    </div>
                                     <div class="panel panel-warning">
                                         <table class="table table-condensed table-responsive text-center">
                                             <!--3, 6, 09, 12, 15, 18, 21, 23, 27-->
@@ -105,31 +113,31 @@
                                                     <div class="btn btn-success btn-sm">車門</div>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(3)">03</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',3)" id="A3">03</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(6)">06</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',6)" id="A6">06</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(9)">09</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',9)" id="A9">09</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(12)">12</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',12)" id="A12">12</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(15)">15</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',15)" id="A15">15</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(18)">18</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',18)" id="A18">18</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(21)">21</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',21)" id="A21">21</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(23)">23</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',23)" id="A23">23</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(27)">27</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',27)" id="A27">27</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -145,7 +153,7 @@
                                                 <td></td><td></td>
                                                 <td></td><td></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(26)">26</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',26)" id="A26">26</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -155,30 +163,30 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(2)">02</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',2)" id="A2">02</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(5)">05</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',5)" id="A5">05</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(8)">08</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',8)" id="A8">08</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(11)">11</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',11)" id="A11">11</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(14)">14</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',14)" id="A14">14</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(17)">17</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',17)" id="A17">17</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(20)">20</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',20)" id="A20">20</button>
                                                 </td>
                                                 <td>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(25)">25</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',25)" id="A25">25</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -188,31 +196,174 @@
                                                 <!--1, 4, 07, 10, 13, 16, 19, 22, 24-->
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(1)">01</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',1)" id="A1">01</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(4)">04</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',4)" id="A4">04</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(7)">07</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',7)" id="A7">07</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(10)">10</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',10)" id="A10">10</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(13)">13</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',13)" id="A13">13</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(16)">16</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',16)" id="A16">16</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(19)">19</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',19)" id="A19">19</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(22)">22</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',22)" id="A22">22</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat(24)">24</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('A',24)" id="A24">24</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 回程選座位 預設隱藏 -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-danger panel-custom materialShadow-1">
+                                <div class="panel-heading panel-heading-custom">
+                                    <h3 class="panel-title text-center">選擇座位(回程)</h3>
+                                </div>
+                                
+                                <div class="panel-body">
+                                    <div class="container">
+                                        <div class="col-sm-12 text-center">
+                                            <h5 style="margin-bottom: 20px;">目前座位選擇: <span id="returnSeatsShow"></span></h5>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-warning">
+                                        
+                                        <table class="table table-condensed table-responsive text-center">
+                                            <!--3, 6, 09, 12, 15, 18, 21, 23, 27-->
+                                            <!--                              26-->
+                                            <!--2, 5, 08, 11, 14, 17, 20,   , 25-->
+                                            <!--1, 4, 07, 10, 13, 16, 19, 22, 24-->
+                                            <tr>
+                                                <td class="firstColum">
+                                                    <div class="btn btn-success btn-sm">車門</div>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',3)">03</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',6)">06</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',9)">09</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',12)">12</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',15)">15</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',18)">18</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',21)">21</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',23)">23</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',27)">27</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--5, 8, 11, 14, 17, 20, 23, 26, 30-->
+                                                <!--                              29-->
+                                                <!--4, 7, 10, 13, 16, 19, 22,   , 28-->
+                                                <!--3, 6, 09, 12, 15, 18, 21, 24, 27-->
+                                                <td class="firstColum">
+                                                    <div class="btn btn-success btn-sm seats" style="visibility: hidden;"></div>
+                                                </td>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',26)">26</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="firstColum" rowspan="2" style="padding-top: 17px; background-color: #5cb85c;">
+                                                    <div class="btn btn-success btn-sm seats" style="border: 0px;" disable>
+                                                    駕駛<br>座位
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',2)">02</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',5)">05</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',8)">08</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',11)">11</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',14)">14</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',17)">17</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',20)">20</button>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',25)">25</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--3, 6, 09, 12, 15, 18, 21, 23, 27-->
+                                                <!--                              26-->
+                                                <!--2, 5, 08, 11, 14, 17, 20,   , 25-->
+                                                <!--1, 4, 07, 10, 13, 16, 19, 22, 24-->
+                                                
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',1)">01</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',4)">04</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',7)">07</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',10)">10</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',13)">13</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',16)">16</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',19)">19</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',22)">22</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript:chooseSeat('B',24)">24</button>
                                                 </td>
                                             </tr>
                                         </table>
@@ -225,7 +376,8 @@
 
                 <!-- 訂票資訊確認 -->
                 <form class="container" method="post" action="" id="userInfo">
-                    <input type="text" name="seatsChoices" id="seatsChoices" hidden/>
+                    <input type="text" name="oneWaySeatsChoices" id="oneWaySeatsChoices" hidden/>
+                    <input type="text" name="returnSeatsChoices" id="returnSeatsChoices" hidden/>
                     <div class="panel panel-primary panel-custom materialShadow-1">
                         <div class="panel-heading panel-heading-custom">
                             <h3 class="panel-title text-center">訂票資訊確認</h3>
@@ -233,9 +385,11 @@
                         <div class="panel-body text-center panel-custom">
                             <div class="container ticketCard">
                                 <div class="col-sm-8 col-sm-offset-2">
-                                    <div class="">
-                                        <table class="table text-center table-responsive">
-                                            <tr class="success">
+                                        <table class="table text-center table-responsive materialShadow-2 custom-table" style="background-color: #fcf8e3;">
+                                            <!-- <tr>
+                                                <th colspan="4" class="text-center danger">來回</th>
+                                            </tr> -->
+                                            <tr>
                                                 <th class="text-center">票種</th>
                                                 <td colspan="3">來回票</td>
                                             </tr>
@@ -266,20 +420,24 @@
                                             <tr>
                                                 <th class="text-center">票券數量</th>
                                                 <td>全票</td>
-                                                <td>全票</td>
-                                                <td>全票</td>
+                                                <td>半票</td>
+                                                <td>優待票</td>
                                             </tr>
                                             <tr>
                                                 <th class="text-center">總金額</th>
-                                                <td colspan="3">1080</td>
+                                                <td colspan="3">$1080</td>
                                             </tr>
                                         </table>
-                                    </div>
                                 </div>
                             </div>
                             <div class="container">
-                                <div class="col-sm-12">
-                                    <input type="submit" value="確認送出" class="btn btn-danger"></input>
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="col-sm-6">
+                                        <input type="submit" value="重新訂票" class="btn btn-danger col-sm-12"></input>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="submit" value="確認送出" class="btn btn-success col-sm-12"></input>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -320,12 +478,58 @@
             alert('debug');
         }
         
-        var seatsChoices = '';
-        function chooseSeat(seatNum){
-            seatsChoices = seatsChoices + seatNum + ',';
-            $('#seatsChoices').prop('value',seatsChoices);
-            console.log(seatNum);
+
+        // 目前選擇座位字串陣列
+        var oneWaySeatsNum = '';
+        var returnSeatsNum = '';
+
+        // 選擇座位
+        function chooseSeat(type,seatNum){
+            if (type == "A"){
+                // 去程座位 (最多選四個)
+                if (oneWaySeatsNum.split(",").length <= 4) {
+                    if(!oneWaySeatsNum.includes(seatNum+'')) {
+                        oneWaySeatsNum = oneWaySeatsNum + seatNum + ',';
+                        var answer = oneWaySeatsNum.substring(0, oneWaySeatsNum.length-1);
+                        $('#oneWaySeatsChoices').prop('value',answer);
+                        $('#oneWaySeatsShow').text(answer);
+                        $('#A'+seatNum).prop('disabled',true);
+                        console.log(type + " : " + seatNum);
+                    }                   
+                } else {
+                    for (i=0; i<4;i++){
+                        var seatArray = oneWaySeatsNum.split(',');
+                        $('#A'+seatArray[i]+'').prop('disabled',false);
+                    }
+                    oneWaySeatsNum = '';
+                    $('#oneWaySeatsChoices').prop('value','');
+                    $('#oneWaySeatsShow').text('');
+                }
+               
+            } else {
+                // 回程座位
+                if (returnSeatsNum.split(",").length <= 4){
+                    if (!returnSeatsNum.includes(seatNum+'')) {
+                        returnSeatsNum = returnSeatsNum + seatNum + ',';
+                        var answer = returnSeatsNum.substring(0, returnSeatsNum.length-1);
+                        $('#returnSeatsChoices').prop('value',answer);
+                        $('#returnSeatsShow').text(answer);
+                        $('#B'+seatNum).prop('disabled',true);
+                        console.log(type + " : " + seatNum);
+                    }
+                } else{
+                    for (i=0; i<4;i++){
+                        var seatArray = returnSeatsNum.split(',');
+                        $('#B'+seatArray[i]+'').prop('disabled',false);
+                    }
+                    returnSeatsNum = '';
+                    $('#returnSeatsChoices').prop('value','');
+                    $('#returnSeatsShow').text('');
+                }
             }
+            
+        }
+            
     </script>
 </body>
 
