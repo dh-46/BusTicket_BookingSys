@@ -99,11 +99,13 @@ li {
 @media screen and (max-width: 410px) {
     .progressbar-item {
         font-size: 10px;
-
-        /* 流程圖縮小後會變形, 是否另設定小圖, 預設display none, 縮小後再顯示 */
-        /*display: none !important;*/
+        width: 10% !important;
+        margin-bottom: 20px;
     }
-
+    #progress1{
+         /* 流程圖縮小後會變形, 是否另設定小圖, 預設display none, 縮小後再顯示 */
+        display: none !important;
+    }
     .footer {
         height: 200px;
     }
@@ -112,6 +114,22 @@ li {
         padding: 10px;
         padding-bottom: 200px;
         /* Height of the footer element */
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .progressbar-item {
+        font-size: 10px;
+        width: 10% !important;
+        margin-bottom: 20px;
+    }
+    #progress1{
+         /* 流程圖縮小後會變形, 是否另設定小圖, 預設display none, 縮小後再顯示 */
+        display: none !important;
+    }
+    #progress2{
+        display: inline !important;
+        margin-bottom: 20px  !important;
     }
 }
 
@@ -127,12 +145,18 @@ li {
     border: 1px solid #f2f6fa;
     border-radius: 3px;
     padding: 10px;
+    width:120px;
     color: white;
     font-style: bold;
 }
 
 .progressbar-selected {
     background-color: #009fe3;
+}
+
+#progress2{
+     /* 流程圖縮小後會變形, 是否另設定小圖, 預設display none, 縮小後再顯示 */
+    display: none;
 }
 
 /*.progressbar-item:hover{*/
