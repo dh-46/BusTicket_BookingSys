@@ -24,32 +24,33 @@
     <div class="wrapper">
         <!-- 導覽列 -->
         <nav class="navbar navbar-default  navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-                <a class="navbar-brand logo" href="index.html">
-                    <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
-                </a>
-                <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
-                    搭客運吧網路訂票系統
-                </a>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                    <a class="navbar-brand logo" href="index.html">
+                        <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
+                    </a>
+                    <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
+                        搭客運吧網路訂票系統
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
+                            <li><a href="stations.html">各站據點</a></li>
+                            <li><a href="news.html">最新消息</a></li>
+                            <li><a href="customService.html">乘客服務(有空再說)</a></li>
+                            <li><a href="timetable.html">時刻表</a></li>
+                            <li><a href="reservedQuery.html">訂位查詢</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
-                    <li><a href="instruction.html">乘車指南</a></li>
-                    <li><a href="customService.html">乘客服務</a></li>
-                    <li><a href="timetable.html">時刻表</a></li>
-                    <li><a href="reservedQuery.html">訂位查詢</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
         
         <!-- Main Content -->
         <div class="mainContent">
@@ -77,44 +78,30 @@
                 <!-- 使用者輸入的資訊 -->
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="panel panel-danger panel-custom materialShadow-1">
-                                <div class="panel-heading panel-heading-custom">
-                                    <h3 class="panel-title">目前選擇的時段與票種</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <span>去程：2018/11/08 06:00 ~ 08:59</span><br>
-                                    <span>台中車站 --> 台北轉運站</span><br>
-                                    <div class="divider"></div>
-                                    <span>回程：2018/11/12 12:00 ~ 14:59</span><br>
-                                    <span>台北轉運站 --> 台中車站</span><br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="panel panel-info panel-custom materialShadow-1">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="panel panel-primary panel-custom materialShadow-1">
                                 <div class="panel-heading panel-heading-custom">
                                     <h3 class="panel-title">您的選擇</h3>
                                 </div>
                                 <div class="panel-body">
                                     <span>去程：2018/11/08 06:00 ~ 08:59</span><br>
-                                    <span>台中車站 --> 台北轉運站</span><br>
+                                    <span>台中車站 ==> 台北轉運站</span><br>
                                     <div class="divider"></div>
                                     <span>回程：2018/11/12 12:00 ~ 14:59</span><br>
-                                    <span>台北轉運站 --> 台中車站</span><br>
+                                    <span>台北轉運站 ==> 台中車站</span><br>
                                     <div class="divider"></div>
                                     <span>全票 1 張</span><br>
                                     <span class="text-left">總金額</span>
                                     <span class="align-right">$ 290</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="row">
                     <!-- 選擇班次 -->
                     <form class="" method="post" action="" id="form2">
                         <!-- 去程 透過後端回傳的資料決定版面6或12-->
-                        <div class="col-sm-6">
+                        <div class="col-sm-8 col-sm-offset-2">
                             <div class="panel panel-success panel-custom materialShadow-2">
                                 <div class="panel-heading panel-heading-custom">
                                     <h3 class="panel-title">去程班次列表</h3>
@@ -139,8 +126,8 @@
                             </div>
                         </div>
                         <!-- 回程 透過後端回傳的資料決定隱藏或顯示-->
-                        <div class="col-sm-6">
-                                <div class="panel panel-success panel-custom materialShadow-2">
+                        <div class="col-sm-8 col-sm-offset-2">
+                                <div class="panel panel-danger panel-custom materialShadow-2">
                                     <div class="panel-heading panel-heading-custom">
                                         <h3 class="panel-title">回程班次列表</h3>
                                     </div>

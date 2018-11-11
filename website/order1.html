@@ -20,33 +20,33 @@
     <div class="wrapper">
         <!-- 導覽列 -->
         <nav class="navbar navbar-default  navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand logo" href="index.html">
-                    <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
-                </a>
-                <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
-                    搭客運吧網路訂票系統
-                </a>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="index.html">
+                        <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
+                    </a>
+                    <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
+                        搭客運吧網路訂票系統
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
+                        <li><a href="stations.html">各站據點</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="customService.html">乘客服務(有空再說)</a></li>
+                        <li><a href="timetable.html">時刻表</a></li>
+                        <li><a href="reservedQuery.html">訂位查詢</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-li-a" href="query.html">網路訂位</a></li>
-                    <li><a href="stations.html">各站據點</a></li>
-                    <li><a href="news.html">最新消息</a></li>
-                    <li><a href="customService.html">乘客服務(有空再說)</a></li>
-                    <li><a href="timetable.html">時刻表</a></li>
-                    <li><a href="reservedQuery.html">訂位查詢</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
         
         <!-- Main Content -->
         <div class="mainContent" style='display:none;'>
@@ -62,7 +62,7 @@
                             <li class="progressbar-item">選擇座位</li>
                             <li class="progressbar-item">訂票完成</li>
                         </ul>
-                         <ul class="list-inline list-group" id="progress2">
+                        <ul class="list-inline list-group" id="progress2">
                             <li class="progressbar-item progressbar-selected">1</li>
                             <li class="progressbar-item">2</li>
                             <li class="progressbar-item">3</li>
@@ -73,7 +73,9 @@
                 </div>
             <!-- 表單區 -->
             <form class="container" method="post" action="" id="form1" onsubmit="return checkForm1()">
+            
             <div class="row col-sm-12">
+                <!-- 單程/去程 -->
                 <div class="form-group col-sm-12">
                     <div class="onoffswitch">
                         <input type="checkbox" name="tripType" class="onoffswitch-checkbox" id="tripTypeSwitch">
@@ -90,10 +92,11 @@
             </div>
             
             <div class="row col-sm-12">
+                <!-- 去程日期選擇 -->
                 <div class="form-group col-sm-6 text-left">
                     <label for="depDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  去程日期</label>
                     <select class="form-control  dateOption" id="depDate" name="depDate">
-                        <option value="null">請選擇去程日期</option>
+                        <option value="null" selected="selected">請選擇去程日期</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
@@ -129,7 +132,7 @@
                 <div class="form-group col-sm-6 text-left">
                     <label for="arriveSite" class="control-label"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  下車站</label>
                     <select class="form-control" id="arriveSite" name="arriveSite">
-                            <option>請選擇下車站</option>
+                            <option value="null">請選擇下車站</option>
                             <optgroup label="北部地區">
                                 <option value="0001">台北轉運站</option>
                                 <option value="0008">重陽站</option>
@@ -143,14 +146,14 @@
             </div>
             <div class="row col-sm-12" id="returnSection" style="display:none;">
                 <div class="form-group col-sm-6 text-left">
-                    <label for="arriveDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  回程日期</label>
-                    <select class="form-control dateOption" id="arriveDate" name="arriveDate">
+                    <label for="returnDate" class="control-label"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>  回程日期</label>
+                    <select class="form-control dateOption" id="returnDate" name="returnDate">
                         <option value="null">請選擇回程日期</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-left">
-                    <label for="arrivTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
-                    <select class="form-control" id="arrivTime" name="arriveTime">
+                    <label for="returnTime" class="control-label"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>  搭乘時段</label>
+                    <select class="form-control" id="returnTime" name="returnTime">
                             <option value="null">請選擇乘車時段</option>
                             <option value="t1">00:00~02:59</option>
                             <option value="t2">03:00~05:59</option>
@@ -290,9 +293,9 @@
     // 產生去回程日期選項
     // 利用moment.js&jquery
     function loadDateOptions(){
-        for (i=0;i<14;i++) {
-            var date = moment().locale('zh-tw').add(i, 'days').format('L');
-            var days = moment().locale('zh-tw').add(i, 'days').format('dddd');
+        for (i=1;i<15;i++) {
+            var date = moment().locale('zh-tw').add(i-1, 'days').format('L');
+            var days = moment().locale('zh-tw').add(i-1, 'days').format('dddd');
             $('.dateOption').append('<option>'+ date + ' ' + days  +'</option>').text();
             $('.dateOption option:eq('+ i +')').attr('value', date);
         }
@@ -307,22 +310,78 @@
         }, 3000);
     }
     
-    
-    // 檢查表單
-    function checkForm1(){
-        isOK = false
-        
-        if (!$('#tripTypeSwitch').prop('checked')){
-            // 單程票檢查
-            if ($('#depDate option:selected').val() == "null") {
-                console.log("未填寫去程日期");
-            }
-            
+    // 驗證訂票數量
+    function checkTicketsAmount(){
+        var isOK = false;
+        // 訂票數量驗證
+        var adult = $('#adult option:selected').val();
+        var child = $('#child option:selected').val();
+        var discount = $('#discount option:selected').val();
+        var total = parseInt(adult) + parseInt(child) + parseInt(discount);
+        if ( total > 4) {
+            showSnackbar("訂票總數限定4張, 請重新選取。")
+            console.log(total);
+        } else if (total == 0){
+            showSnackbar("票券數量不得為零");
+            console.log(total);
         } else {
-            
+            console.log(total);
+            isOK = true;
         }
         return isOK;
     }
+
+    // 去回程欄位驗證
+    function checkInputs(){
+        // 去回程欄位驗證
+        var isChecked = true;
+        if ($('#departSite option:selected').val() == "null") {
+            showSnackbar('請選擇上車站');
+            isChecked = false;
+        } else if ($('#arriveSite option:selected').val() == "null") {
+            showSnackbar('請選擇下車站');
+            isChecked = false;
+        } else if ($('#departSite option:selected').val() == $('#arriveSite option:selected').val()){
+            showSnackbar('上下車站不可相同');
+            isChecked = false;
+        }
+
+        if ($('#depDate option:selected').val() == "null"){
+            showSnackbar('請選擇去程日期');
+            isChecked = false;
+        } else if ($('#depTime option:selected').val() == "null"){
+            showSnackbar('請選擇乘車時段');
+            isChecked = false;
+        } 
+
+        if ($('#tripTypeSwitch').prop('checked')){
+            // 來回票檢查
+            if ($('#returnDate option:selected').val() == "null"){
+                showSnackbar('請選擇回程日期');
+                isChecked = false;
+            } else if ($('#returnTime option:selected').val() == "null"){
+                showSnackbar('請選擇乘車時段');
+                isChecked = false;
+            } 
+        }
+
+
+        return isChecked;
+    }
+
+
+    // 檢查表單
+    function checkForm1(){
+        console.log('checkForm1');
+        isOK = false
+        
+        if (checkInputs() && checkTicketsAmount()){
+            isOK = true;
+        }
+        return isOK;
+    }
+
+
     
     
     </script>
