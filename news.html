@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
   <link rel="stylesheet" href="css/dh-index.css" type="text/css" />
   <link rel="stylesheet" href="css/dh-cards.css" type="text/css" />
-  <title>搭客運吧</title>
+  <title>最新消息 | 搭客運吧</title>
   <style type="text/css">
   /* CSS testing*/
   .news-head {
@@ -175,7 +175,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-xs-12">
+                      <div class="col-xs-12" id="pagers" hidden>
                         <ul class="pagination">
                           <li class="previous"><a href="#">Previous</a></li>
                           <li><a href="#" class="materialShadow-1">1</a></li>
@@ -226,9 +226,9 @@
         // $('.mainContent').fadeIn(1000);
 
 
-        $('.card').slideDown(2000);
+        $('.card').show(2000);
 
-
+        $('#pagers').show(3000);
 
 
       });
