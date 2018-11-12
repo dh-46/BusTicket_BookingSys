@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
+  <link rel="stylesheet" href="css/dh-index.css" type="text/css" />
+  <link rel="stylesheet" href="css/dh-cards.css" type="text/css" />
+  <title>時刻表 | 搭客運吧</title>
+  <style type="text/css">
+  /* CSS testing*/
+  .news-head {
+    margin-top:60px;
+  }
+  .card{
+    display: none;
+  }
+  
+  .table-custom td {
+    background-color: #fff;
+    margin:2px;
+  }
+  
+  /*table tr td {*/
+  /*  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;*/
+  /*  transition: all 0.3s cubic-bezier(.25, .8, .25, 1) !important;  */
+  /*}*/
+  
+  .table {
+    margin-bottom:0px;  
+  }
+  </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-default  navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                <a class="navbar-brand logo" href="index.html">
+                    <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
+                </a>
+                <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
+                    搭客運吧
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
+                    <li><a href="stations.html">營業據點</a></li>
+                    <li><a href="news.html">最新消息</a></li>
+                    <li><a href="timetable.html">時刻表</a></li>
+                    <li><a href="reservedQuery.html">訂位查詢</a></li>
+              </ul>
+            </div>
+          </div>
+    </nav>
+        
+    <!-- Main Content -->
+    <div class="mainContent">
+        
+        <!-- 最新消息 -->
+        <div class="container">
+            <div class="news-head text-center">
+              <ol class="breadcrumb">
+                <li><a href="index.html">首頁</a></li>
+                <li class="active">時刻表</li>
+              </ol>
+              <h2 class="heading">
+                時刻表
+              </h2>
+              <br>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+              <ul class="list-group success">
+                <a class="list-group-item list-custom materialShadow-1" href="javascript:showContent(1627)">1627 台北往台中(經三重)</a>
+                <div class="row route-content" id="1627" hidden>
+                  <div class="col-sm-12">
+                    <div class="table-responsive materialShadow-2">
+                      <table class="table table-hover table-bordered table-custom text-center">
+                        <tr id="titles" class="warning">
+                          <th class="text-center">發車時刻</th>
+                          <th class=" text-center">備註</th>
+                        </tr>
+                        <tr>
+                          <td>06:00</td>
+                          <td>每天行駛</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <a class="list-group-item list-custom materialShadow-1" href="javascript:showContent(1128)">1128 台中往基隆(經桃園)</a>
+                <div class="row route-content" id="1128" hidden>
+                  <div class="col-sm-12">
+                    <div class="table-responsive materialShadow-2">
+                      <table class="table table-hover table-bordered table-custom text-center">
+                        <tr id="titles" class="warning">
+                          <th class="text-center">發車時刻</th>
+                          <th class=" text-center">備註</th>
+                        </tr>
+                        <tr>
+                          <td>05:00</td>
+                          <td>每天行駛</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>台北轉運站</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            
+        </div>
+    <!-- /Main Content-->
+    </div>
+        
+    <!--Footer-->
+    <footer class="footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <br>
+                        <span>免費客服 0800-000-000 搭客運吧 © 版權所有 Copyright © 2018 All Rights Reserved.</span>
+                        <br>
+                        <span>本網站為資策會養成班結訓專題作品，引用圖文若有侵犯您的著作權，煩請來信告知以利將資料移除，謝謝！</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</div>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+  <script type="text/javascript">
+      $('document').ready(function() {
+        $('#logopic').toggle(1000, function() {
+          $('#navtitle').fadeIn(1000);
+        });
+        // $('.mainContent').fadeIn(1000);
+        // $('.card').show(2000);
+        // $('#pagers').show(3000);
+      });
+      
+      function showContent(id){
+        $('#'+ id).toggle(1000);
+      }
+  </script>
+</body>
+
+</html>
