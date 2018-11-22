@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <title>購票須知</title>
     <style type="text/css">
         /* CSS Testing */
@@ -126,10 +127,13 @@
                                 <span class="input-group-addon" id="orderCode-label">訂票代號</span>
                                 <input type="text" class="form-control" placeholder="六位數字(建議使用手機後六碼)" aria-describedby="orderCode-label" name="orderCode" maxlength="6" id="orderCode">
                             </div>
-                            <div class="input-group input-custom">
+                            <!-- <div class="input-group input-custom">
                                 <span class="input-group-addon" id="verifiedCode-label">驗證碼</span>
                                 <input type="text" class="form-control" placeholder="不分大小寫" aria-describedby="verifiedCode-label" name="verifiedCode">
-                            </div>
+                            </div> -->
+                            
+                            <div class="g-recaptchar" data-sitekey="6Lf2ZHwUAAAAACJlYz8vncyYeGHoW4dn_xLKg_jh"></div>
+                            
                             <div class="form-group input-custom">
                             <input type="submit" value="下一步選擇座位" class="btn btn-success form-control"/>
                         </div>
