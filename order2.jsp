@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +17,7 @@
         .align-right{
             position:relative;
             margin-right:0px;
-            margin-left:0%;
+            margin-left:70%;
         }
     </style>
 </head>
@@ -83,11 +85,11 @@
                                     <h3 class="panel-title">您的選擇</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <span style="font-size:1.5em">去程：2018/11/30 06:00 ~ 08:59</span><br>
+                                    <span style="font-size:1.5em">去程：2018/11/30 &nbsp06:00 ~ 08:59</span><br>
                                     <span style="font-size:1.5em">起站：台中車站</span><br>
                                     <span style="font-size:1.5em">訖站：台北轉運站</span><br>
                                     <div class="divider"></div>
-                                    <span style="font-size:1.5em">回程：2018/12/01 15:00 ~ 17:59</span><br>
+                                    <span style="font-size:1.5em">回程：2018/12/01 &nbsp15:00 ~ 17:59</span><br>
                                     <span style="font-size:1.5em">起站：台北轉運站</span><br>
                                     <span style="font-size:1.5em">訖站：台中車站</span><br>
                                     <div class="divider"></div>
@@ -109,15 +111,24 @@
                                 <div class="panel-body">
                                     <div class="list-group oneWayS">
                                         <input type="text" name="oneWaySelect" id="oneWaySelect" hidden/>
-                                        <a href="javascript:radioSelect(0)" id="oneWayS1" class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                        <a href="javascript:radioSelect(0)" 
+                                        	id="oneWayS1" 
+                                        	class="list-group-item list-group-item-warning materialShadow-1" 
+                                        	style="font-size:1.3em">
                                                                2018/11/20 06:00
                                                                <span class="badge" style="font-size:1em">剩餘座位 10</span>
                                                                </a>
-                                        <a href="javascript:radioSelect(1)" id="oneWayS2" class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                        <a href="javascript:radioSelect(1)" 
+                                        	id="oneWayS2" 
+                                        	class="list-group-item list-group-item-warning materialShadow-1" 
+                                        	style="font-size:1.3em">
                                                                2018/11/20 07:00
                                                                <span class="badge" style="font-size:1em">剩餘座位 9</span>
                                                                </a>
-                                        <a href="javascript:radioSelect(2)" id="oneWayS3" class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                        <a href="javascript:radioSelect(2)" 
+                                        	id="oneWayS3" 
+                                        	class="list-group-item list-group-item-warning materialShadow-1" 
+                                        	style="font-size:1.3em">
                                                                2018/11/20 08:00
                                                                <span class="badge" style="font-size:1em">剩餘座位 3</span>
                                                                </a>
@@ -136,31 +147,35 @@
                                             <input type="text" name="returnSelect" id="returnSelect" hidden/>
                                             <a href="javascript:radioSelect(3)" 
                                                 id="returnS1" 
-                                                class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                                class="list-group-item list-group-item-warning materialShadow-1"
+                                                style="font-size:1.3em">
                                                                 2018/11/22 15:00
                                                                 <span class="badge" style="font-size:1em">剩餘座位 4</span></a>
                                             <a href="javascript:radioSelect(4)" 
                                                 id="returnS2" 
-                                                class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                                class="list-group-item list-group-item-warning materialShadow-1"
+                                                style="font-size:1.3em">
                                                                2018/11/22 16:00
                                                                <span class="badge" style="font-size:1em">剩餘座位 8</span></a>
                                             <a href="javascript:radioSelect(5)" 
                                                 id="returnS3" 
-                                                class="list-group-item list-group-item-warning materialShadow-1" style="font-size:1.3em">
+                                                class="list-group-item list-group-item-warning materialShadow-1"
+                                                style="font-size:1.3em">
                                                                2018/11/22 17:00
                                                                <span class="badge" style="font-size:1em">剩餘座位 5</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+	                    <div class="row">
+	                        <div class="form-group col-sm-12 ">
+	                            <!--<a href="order3.html" class="btn btn-primary form-control">送出查詢</a>-->
+	                            <input type="submit" value="送出查詢" class="btn btn-primary form-control materialShadow-1" />
+	                        </div>
+	                    </div>
                     </form>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12 ">
-                            <a href="order3.html" class="btn btn-primary form-control">送出查詢</a>
-                            <!--<input type="submit" value="送出查詢" class="btn btn-primary form-control materialShadow-1" />-->
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

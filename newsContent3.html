@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/dh-generalStyle.css" type="text/css" />
+    <link rel="stylesheet" href="css/dh-index.css" type="text/css" />
+    <link rel="stylesheet" href="css/dh-cards.css" type="text/css" />
+    <title>搭客運吧</title>
+    <style type="text/css">
+        /* CSS testing*/
+
+        .picHead {
+            margin-top: 70px;
+        }
+
+        .card {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        <nav class="navbar navbar-default  navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    <a class="navbar-brand logo" href="index.html">
+                    <span><img id="logopic" src="img/bus.svg" style="display:none"/></span>
+                </a>
+                    <a class="navbar-brand" id="navtitle" style="display:none" href="index.html">
+                    搭客運吧
+                </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
+                        <li><a href="stations.html">各站據點</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="timetable.html">時刻表</a></li>
+                        <li><a href="reservedQuery.html">訂位查詢</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="mainContent">
+            <div class="container picHead">
+                <div class="col-sm-12  text-center">
+                    <img src="img/news3.jpg" class="materialShadow-1 img-responsive"></img>
+                </div>
+                <div class="col-sm-12  text-left">
+                    <h3>宜蘭國道客運直達桃園機場 11/19上路 每天60班次</h3>
+                    <h4>發布時間: <span id="pulishTime">2018/08/23 12:35</span></h4>
+                    <p style="font-size:1.3em;">
+                        立委陳歐珀辦公室今在礁溪轉運站舉行履勘，宣布11月19日宜蘭國道客運直達桃園機場路線就可上路，由統聯可運取得經營權，一天60班次；陳歐珀強調，營運後除會提供縣民1個月搭乘半價優惠，統聯也承諾，將招募20名宜蘭縣籍司機，投入直達路線。 交通部7月18日核定統聯客運取得宜蘭至桃園機場國道經營路權，統聯有6個月籌備期，原預計明年1月中旬才能營運，但經陳歐珀、交通部及統聯協調後，籌備期提早3個月，並給予1個月寬限期。 昨陳歐珀在宜蘭縣礁溪轉運站舉行履勘，邀請立委鄭寶清及交通部次長祁文中等人與會，宣布11月19日宜蘭國道客運直達桃園機場路線就可上路，每天60班次，如未塞車，單趟車程從原本的3小時減少剩1個半小時，票價200元到280元不等。。
+                        陳歐珀說，路線營運後，縣民出國旅行就不用大包小包，節省約1個半小時轉乘時間，除讓縣民出國更便利，更有助於為宜蘭縣帶來觀光人潮，振興觀光產業。 陳歐珀指出，路線營運後1個月，縣民憑身分證，可享搭乘半價優惠，統聯也承諾，將招募20名宜蘭縣籍司機，投入直達路線，希望藉此造福鄉親。
+                    </p>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <ul class="pager">
+                        <li><a href="newsContent2.html">上一則</a></li>
+                        <li><a href="#">下一則</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 最新消息 -->
+            <!--<div class="container newsbox">-->
+            <!--    <section class="boxwrapper">-->
+            <!--      <div class="container-fostrap">-->
+            <!--        <div class="news-head">-->
+            <!--          <ol class="breadcrumb">-->
+            <!--            <li><a href="index.html">首頁</a></li>-->
+            <!--            <li class="active">最新消息</li>-->
+            <!--          </ol>-->
+            <!--<h2 class="heading">-->
+            <!--  最新消息-->
+            <!--</h2>-->
+            <!--<br>-->
+            <!--        </div>-->
+            <!--        <div class="content">-->
+            <!--          <div class="container">-->
+            <!--            <div class="row">-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="news.html">-->
+            <!--                      <img src="img/votes.jpg" />-->
+            <!--                    </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#"> 2018 九合一選舉訂位</a>-->
+            <!--                    </h4>-->
+            <!--<p class="">-->
+            <!--  Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...-->
+            <!--</p>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">-->
+            <!--                      <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />-->
+            <!--                  </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#">新版訂票APP開放下載</a>-->
+            <!--                    </h4>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">-->
+            <!--                     <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />-->
+            <!--                  </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#">學生專案延長申請</a>-->
+            <!--                    </h4>-->
+            <!--<p class="">-->
+            <!--  tutorials button hover animation, although very much a hover button is very beauti...-->
+            <!--</p>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <!--            <div class="row">-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="news.html">-->
+            <!--                      <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />-->
+            <!--                    </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#"> 2018 九合一選舉訂位</a>-->
+            <!--                    </h4>-->
+            <!--<p class="">-->
+            <!--  Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...-->
+            <!--</p>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">-->
+            <!--                      <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />-->
+            <!--                  </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#">新版訂票APP開放下載</a>-->
+            <!--                    </h4>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-xs-12 col-sm-4">-->
+            <!--                <div class="card">-->
+            <!--                  <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">-->
+            <!--                     <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />-->
+            <!--                  </a>-->
+            <!--                  <div class="card-content">-->
+            <!--                    <h4 class="card-title">-->
+            <!--                      <a href="#">學生專案延長申請</a>-->
+            <!--                    </h4>-->
+            <!--<p class="">-->
+            <!--  tutorials button hover animation, although very much a hover button is very beauti...-->
+            <!--</p>-->
+            <!--                  </div>-->
+            <!--                  <div class="card-read-more">-->
+            <!--                    <a href="#" class="btn btn-link btn-block">了解更多</a>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <!--            <div class="row">-->
+            <!--              <div class="col-xs-12">-->
+            <!--                <ul class="pagination materialShadow-1">-->
+            <!--                  <li class="previous materialShadow-1"><a href="#">Previous</a></li>-->
+            <!--                  <li><a href="#" class="materialShadow-1">1</a></li>-->
+            <!--                  <li><a href="#" class="materialShadow-1">2</a></li>-->
+            <!--                  <li><a href="#" class="materialShadow-1">3</a></li>-->
+            <!--                  <li><a href="#" class="materialShadow-1">4</a></li>-->
+            <!--                  <li><a href="#" class="materialShadow-1">5</a></li>-->
+            <!--                  <li class="next materialShadow-1"><a href="#">Next</a></li>-->
+            <!--                </ul>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <!--          </div>-->
+            <!--        </div>-->
+            <!--      </div>-->
+            <!--    </section>-->
+
+            <!--    </div>-->
+            <!-- /Main Content-->
+        </div>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <br>
+                        <span>免費客服 0800-000-000 搭客運吧 © 版權所有 Copyright © 2018 All Rights Reserved.</span>
+                        <br>
+                        <span>本網站為資策會養成班結訓專題作品，引用圖文若有侵犯您的著作權，煩請來信告知以利將資料移除，謝謝！</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function() {
+            $('#logopic').toggle(1000, function() {
+                $('#navtitle').fadeIn(1000);
+            });
+
+            // $('.mainContent').fadeIn(1000);
+
+
+            $('.card').slideDown(2000);
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

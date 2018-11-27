@@ -9,42 +9,45 @@
     <title>訂位查詢 | 搭客運吧</title>
     <style type="text/css">
         /* CSS Testing */
-        .buttons-custom{
-            margin-top: 20px;    
+
+        .buttons-custom {
+            margin-top: 20px;
         }
-        
+
         /*.orderNum {*/
+
         /*    font-weight:800;*/
+
         /*    color: red;*/
+
         /*}*/
-        
-        #title{
-            margin-top:10px;
-            margin-bottom:16px;
+
+        #title {
+            margin-top: 10px;
+            margin-bottom: 16px;
         }
-        
-        .panel-custom-center{
-            padding-right:20%;
-            padding-left:20%;
+
+        .panel-custom-center {
+            padding-right: 20%;
+            padding-left: 20%;
         }
-        
-        .input-custom{
-            margin-top:10px;
-            margin-bottom:10px;
+
+        .input-custom {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
-        
+
         #queryForm {
-            margin-top:20px;    
+            margin-top: 20px;
         }
-        
-        .table-hover > tbody > tr:hover {
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-          color: #003580;
-          font-weight:900;
+
+        .table-hover>tbody>tr:hover {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            color: #003580;
+            font-weight: 900;
         }
-        
-        </style>
+    </style>
 </head>
 
 <body>
@@ -69,10 +72,10 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="nav-li-a" href="order1.html">網路訂位</a></li>
-                            <li><a href="stations.html">各站據點</a></li>
-                            <li><a href="news.html">最新消息</a></li>
-                            <li><a href="timetable.html">時刻表</a></li>
-                            <li><a href="reservedQuery.html">訂位查詢</a></li>
+                        <li><a href="stations.html">各站據點</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="timetable.html">時刻表</a></li>
+                        <li><a href="reservedQuery.html">訂位查詢</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,7 +92,7 @@
                 <!-- 訂票查詢 -->
                 <div class="container" id="queryForm">
                     <div class="row">
-                        <form class="container" method="post" action="" name="checkOrderForm" id="userInfo"  onsubmit="return checkForm()">
+                        <form class="container" method="post" action="" name="checkOrderForm" id="userInfo" onsubmit="return checkForm()">
                             <div class="panel panel-primary panel-custom materialShadow-2">
                                 <div class="panel-heading panel-heading-custom">
                                     <h3 class="panel-title text-center">請輸入訂票人身分證字號與訂票代碼，以查詢您的訂票紀錄。</h3>
@@ -101,20 +104,18 @@
                                     <!--</div>-->
                                     <div class="input-group input-custom">
                                         <span class="input-group-addon " id="uid-label">身分證字號</span>
-                                        <input type="text" class="form-control" placeholder="請輸入您的身分證字號" aria-describedby="uid-label" name="uid" id="uidInput"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                        <input type="text" class="form-control" placeholder="請輸入您的身分證字號" aria-describedby="uid-label" name="uid" id="uidInput" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                     </div>
                                     <div class="input-group input-custom">
                                         <span class="input-group-addon" id="orderCode-label">訂票代號</span>
                                         <input type="text" class="form-control" placeholder="六位數字(建議使用手機後六碼)" aria-describedby="orderCode-label" name="orderCode" maxlength="6" id="orderCode">
                                     </div>
-                                    <div class="input-group input-custom">
-                                        <span class="input-group-addon" id="verifiedCode-label">驗證碼</span>
-                                        <input type="text" class="form-control" placeholder="不分大小寫" aria-describedby="verifiedCode-label" name="verifiedCode">
-                                    </div>
+
+
                                     <div class="form-group input-custom">
-                                    <input type="submit" value="送出查詢" class="btn btn-success form-control"/>
-                                </div>
+                                        <!--<input type="submit" value="送出查詢" class="btn btn-success form-control" onclick="addTicket()"/>-->
+                                        <button class="btn btn-success form-control" onclick="addTicket()" id="">送出查詢</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -123,82 +124,108 @@
                 <div class="container" id="queryResult">
                     <div class="row">
                         <div class="container">
-                        <div class="panel panel-danger panel-custom materialShadow-2">
-                            <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title text-center">查詢結果</h3>
-                            </div>
-                            <div class="panel-body ">
-                                <div class="col-sm-12">
-                                    <h4 class="text-center">系統僅會顯示未取票/未付款之訂票紀錄。</h4>
-                                    <br>
-                                    <form class="table-responsive">
-                                        <table class="table table-hover table-bordered text-center">
-                                        <tr class="text-center success">
-                                            <th class="text-center">
-                                                訂單編號
-                                            </th>
-                                            <th class="text-center">
-                                                乘車日期
-                                            </th>
-                                            <th class="text-center">
-                                                乘車時間
-                                            </th>
-                                            <th class="text-center">
-                                                上車站
-                                            </th>
-                                            <th class="text-center">
-                                                下車站
-                                            </th>
-                                            <th class="text-center">
-                                                票種
-                                            </th>
-                                            <th class="text-center">
-                                                金額
-                                            </th>
-                                            <th class="text-center">
-                                                狀態
-                                            </th>
-                                            <th class="text-center">
-                                                功能
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <td>123456789</td>
-                                            <td>2018/11/10</td>
-                                            <td>08:00</td>
-                                            <td>台北</td>
-                                            <td>台中</td>
-                                            <td>全票</td>
-                                            <td>280</td>
-                                            <td>未付款</td>
-                                            <td>
-                                                <button class="btn btn-danger btn-md">取消</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>123456789</td>
-                                            <td>2018/11/10</td>
-                                            <td>08:00</td>
-                                            <td>台北</td>
-                                            <td>台中</td>
-                                            <td>全票</td>
-                                            <td>280</td>
-                                            <td>未付款</td>
-                                            <td>
-                                                <button class="btn btn-danger btn-md">取消</button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    </form>
+                            <div class="panel panel-danger panel-custom materialShadow-2">
+                                <div class="panel-heading panel-heading-custom">
+                                    <h3 class="panel-title text-center">查詢結果</h3>
+                                </div>
+                                <div class="panel-body ">
+                                    <div class="col-sm-12">
+                                        <h4 class="text-center">系統僅會顯示未取票/未付款之訂票紀錄。</h4>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered text-center">
+                                                <tr class="text-center success">
+                                                    <th class="text-center">
+                                                        訂單編號
+                                                    </th>
+                                                    <th class="text-center">
+                                                        乘車日期
+                                                    </th>
+                                                    <th class="text-center">
+                                                        乘車時間
+                                                    </th>
+                                                    <th class="text-center">
+                                                        上車站
+                                                    </th>
+                                                    <th class="text-center">
+                                                        下車站
+                                                    </th>
+                                                    <th class="text-center">
+                                                        票種
+                                                    </th>
+                                                    <th class="text-center">
+                                                        金額
+                                                    </th>
+                                                    <th class="text-center">
+                                                        狀態
+                                                    </th>
+                                                    <th class="text-center">
+                                                        功能
+                                                    </th>
+                                                </tr>
+                                                <tr id="addTicket" style="display: none">
+                                                    <td>123456789</td>
+                                                    <td>2018/11/30</td>
+                                                    <td>06:00</td>
+                                                    <td>台中車站</td>
+                                                    <td>台北轉運站</td>
+                                                    <td>全票</td>
+                                                    <td>290</td>
+                                                    <td>未付款</td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-md" id='btnc'>取消</button>
+                                                    </td>
+                                                </tr>
+                                                <!--<tr>-->
+                                                <!--    <td>123456789</td>-->
+                                                <!--    <td>2018/11/10</td>-->
+                                                <!--    <td>08:00</td>-->
+                                                <!--    <td>台北</td>-->
+                                                <!--    <td>台中</td>-->
+                                                <!--    <td>全票</td>-->
+                                                <!--    <td>280</td>-->
+                                                <!--    <td>未付款</td>-->
+                                                <!--    <td>-->
+                                                <!--        <button class="btn btn-danger btn-md">取消</button>-->
+                                                <!--    </td>-->
+                                                <!--</tr>-->
+                                            </table>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div id="snackbar"></div>
+        
+        <div class="modal fade" id="cancelModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    <h3>您確定要取消訂票嗎?</h3>
+                </div>
+                <div class="modal-body" id="introContent">
+                    <p>票券取消後須重新訂票!</p>
+                </div>
+                <div class="modal-footer" id="footerWiki">
+                     <div class="pull-right">
+                        <button type="button" id="btnConfirm" class="btn btn-success" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-ok"></span> 確定取消
+                    </button>
+                        <button type="button" id="btnCancel" class="btn btn-warning" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 再考慮一下
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
         <!--Footer-->
         <footer class="footer">
             <div class="container text-center">
@@ -216,6 +243,7 @@
     
 
 
+
     <!--JS for general usage-->
     <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
@@ -231,106 +259,146 @@
         function debug() {
             alert('debug');
         }
-        
+
         // Snackbar
-            function showSnackbar(message) {
-                $('#snackbar').addClass('show');
-                $('#snackbar').text(message);
-                setTimeout(function() {
-                    $('#snackbar').prop('class','');
-                }, 3000);
-                // setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+        function showSnackbar(message) {
+            $('#snackbar').addClass('show');
+            $('#snackbar').text(message);
+            setTimeout(function() {
+                $('#snackbar').prop('class', '');
+            }, 3000);
+            // setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        // 動態驗證身份證字號事件
+        $('#uidInput').on("focusout", function() {
+            checkUid();
+            console.log("focusout");
+        });
+
+
+        // 驗證身份證字號方法
+        function checkUid() {
+            var input = $('#uidInput').val();
+
+            if (input == '') {
+                showSnackbar("請輸入您的身分證字號");
+                return false;
             }
-            
-            // 動態驗證身份證字號事件
-            $('#uidInput').on("focusout", function(){
-                checkUid();
-                console.log("focusout");
-            });
-            
-            
-            // 驗證身份證字號方法
-            function checkUid(){
-                var input = $('#uidInput').val();
-                
-                if ( input == ''){
-                    showSnackbar("請輸入您的身分證字號");
+            else if (!input.match('^[A-Z][1-2][0-9]{8}$')) {
+                showSnackbar("身分證字號格式錯誤");
+                return false;
+            }
+
+            var letters = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+            var n12 = letters.indexOf(input.charAt(0)) + 10;
+            var n1 = n12 / 10;
+            var n2 = n12 % 10;
+            var sum =
+                n1 * 1 +
+                n2 * 9 +
+                parseInt(input.charAt(1)) * 8 +
+                parseInt(input.charAt(2)) * 7 +
+                parseInt(input.charAt(3)) * 6 +
+                parseInt(input.charAt(4)) * 5 +
+                parseInt(input.charAt(5)) * 4 +
+                parseInt(input.charAt(6)) * 3 +
+                parseInt(input.charAt(7)) * 2 +
+                parseInt(input.charAt(8)) * 1 +
+                parseInt(input.charAt(9)) * 1;
+
+            if (Math.round(sum) % 10 == 0) {
+                return true;
+            }
+            else {
+                // console.log('驗證失敗');
+                // snackbar("身份證字號驗證失敗, 請重新輸入");
+                return false;
+            }
+        }
+
+        // 驗證代碼是否符合規範
+        function checkOrderCode() {
+            var orderCode = $('#orderCode').val();
+            if (orderCode.match('^[0-9]{6}$')) {
+                return true;
+            }
+            return false;
+        }
+
+        // 檢查表單是否正確
+        function checkForm() {
+            // 檢查身分證
+            if (checkUid()) {
+                // 身分證正確
+                if (checkOrderCode()) {
+                    console.log('表單送後端驗證');
                     return false;
-                } else if (!input.match('^[A-Z][1-2][0-9]{8}$')){
-                    showSnackbar("身分證字號格式錯誤");
-                    return false;    
                 }
-                
-                var letters = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
-                var n12 = letters.indexOf(input.charAt(0))+10;
-                var n1 = n12 / 10;
-                var n2 = n12 % 10;
-                var sum = 
-                n1*1 + 
-                n2*9 + 
-                parseInt(input.charAt(1))*8 + 
-                parseInt(input.charAt(2))*7 +
-                parseInt(input.charAt(3))*6 +
-                parseInt(input.charAt(4))*5 +
-                parseInt(input.charAt(5))*4 +
-                parseInt(input.charAt(6))*3 +
-                parseInt(input.charAt(7))*2 +
-                parseInt(input.charAt(8))*1 +
-                parseInt(input.charAt(9))*1;
-                
-                if (Math.round(sum) % 10 == 0){
-                    return true;
-                } else{
-                    // console.log('驗證失敗');
-                    // snackbar("身份證字號驗證失敗, 請重新輸入");
-                    return false;    
+                else {
+                    showSnackbar("取票代碼不符規定");
+                    console.log("取票代碼不符規定");
+                    return false;
                 }
             }
-            
-            // 驗證代碼是否符合規範
-            function checkOrderCode(){
-                var orderCode = $('#orderCode').val();
-                if (orderCode.match('^[0-9]{6}$')) {
-                    return true;
-                }
+            else {
+                // 身分錯誤
+                showSnackbar("身份證字號有誤");
+                console.log('身份證字號有誤');
                 return false;
             }
-            
-            // 檢查表單是否正確
-            function checkForm(){
-                    // 檢查身分證
-                    if (checkUid()){
-                        // 身分證正確
-                        if (checkOrderCode()){
-                            console.log('表單送後端驗證');
-                            return true;
-                        } else {
-                            showSnackbar("取票代碼不符規定");
-                            console.log("取票代碼不符規定");
-                            return false;
-                        }
-                    } else {
-                        // 身分錯誤
-                        showSnackbar("身份證字號有誤");
-                        console.log('身份證字號有誤');
-                        return false;
-                    }
-                return false;
-            }
-            
-            
-            // 刪除: 發送ID給後端
-            $('button').click(function(){
-                var trIndex = $(this).parent().parent().index('tr');
-                // var tds = $(this).parent().parent();
-                var ticketId = $('tr:eq('+ trIndex +')').contents().filter('td:eq(0)').text();
-                
-                // ajax發送?
-                // console.log(a)
-            });
-            
-            
-            
+            return false;
+        }
+
+
+        // 刪除: 發送ID給後端
+        $('button').click(function() {
+            var trIndex = $(this).parent().parent().index('tr');
+            // var tds = $(this).parent().parent();
+            var ticketId = $('tr:eq(' + trIndex + ')').contents().filter('td:eq(0)').text();
+
+            // ajax發送?
+            // console.log(a)
+        });
+        
+        //增加訂票
+        var i =0;
+        var myInterval;
+        function addTicket() {
+            myInterval = setInterval(function() {
+                i++;
+                if (i == 3) {
+                    $("#addTicket").css('display', 'table-row');
+                    clearInterval(myInterval)
+                }
+            }, 1000);
+        }
+        
+        
+        
+        
+        //取消訂票
+        var a =0;
+        var myInterval2;
+        
+        function doCancel(){
+            myInterval2 = setInterval(function() {
+                a++;
+                if (a == 3) {
+                    $("#addTicket").hide();
+                    clearInterval(myInterval2)
+                }
+            }, 1000);
+        }
+        
+        $("#btnConfirm").on("click", function() {
+            doCancel();
+        })
+        
+        $('#btnc').on('click', function(){
+            $("#cancelModal").modal();
+        });
+        
     </script>
 </body>
 

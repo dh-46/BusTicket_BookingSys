@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -98,7 +100,7 @@
                                         <div class="container">
                                             <div class="col-sm-4">
                                             <a href="order1.html">
-                                                <a href="order1.html" class="btn btn-info col-sm-12">繼續訂票</a>
+                                                <a href="order1.html" class="btn btn-info col-sm-12">重新訂票</a>
                                                 <!--<button type="button" class="btn btn-info col-sm-12" onclick="">重新訂票</button>-->
                                             </a>
                                             </div>

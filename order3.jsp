@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -113,7 +115,7 @@
                 </div>
                 
                 <!-- 輸入訂票人資訊 -->
-                <form class="container" method="post" action="ReCaptchaOrder3" name="order3Form" id="userInfo"  onsubmit="return checkForm()">
+                <form class="container" method="post" action="order4" name="order3Form" id="userInfo"  onsubmit="return checkForm()">
                     <div class="panel panel-success panel-custom materialShadow-2">
                         <div class="panel-heading panel-heading-custom">
                             <h3 class="panel-title text-center">訂票人資訊</h3>
@@ -134,7 +136,7 @@
                             </div> -->
                             
                             <div class="g-recaptcha" data-sitekey="6Le80nwUAAAAAJJFTgX9TTAHlvmxqdNaLhg6ApMw"></div>
-                         
+                            
                             <div class="form-group input-custom">
                             <!--<a href="order4.html" class="btn btn-success form-control">下一步選擇座位</a>-->
                             <input type="submit" value="下一步選擇座位" class="btn btn-success form-control"/>
@@ -272,7 +274,7 @@
                 }
                 return false;
             }
-             
+                     
             
             
     </script>
