@@ -226,7 +226,7 @@
             </div>
             <div class="row col-sm-12">
                 <div class="form-group col-sm-12">
-                    <a href="order2.html" class="btn btn-primary form-control" id="fakeSubmit" onclick="fakeSubmit()">送出查詢</a>
+                    <button class="btn btn-primary form-control" id="fakeSubmit" onclick="fakeSubmit()">送出查詢</button>
                     <!-- <input type="submit" value="送出查詢" class="btn btn-primary form-control" /> -->
                 </div>
             </div>
@@ -382,7 +382,7 @@
     }
 
     function fakeSubmit(){
-        if (checkForm1){
+        if (checkForm1()){
             window.location = "order2.html";
         }
     }
